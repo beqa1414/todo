@@ -43,6 +43,24 @@ color: rgba(255, 255, 255, 1);
 .input-wrapper{
   text-align: center;
 }
+input[type=text]{
+
+background: #EBEFF2;
+border-radius: 5px;
+margin: 0 8px;
+text-decoration: none;
+width: 275px;
+height: 49px;
+}
+input[type=text]:focus{
+outline: none;
+}
+.input_frame{
+  flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 5;
+}
 
 .item{
   display: flex;
