@@ -1,23 +1,29 @@
-import { useState } from "react";
 import rect from "../images/Rectangle 2.png";
-import List from "./List";
+import TodoList from "./TodoList";
+import rect1 from "../images/Rectangle1.jpg";
 
-function Todo() {
-  const [itemName, setItemName] = useState(null);
-  const [itemList, updateItemList] = useState([]);
-
+function TodoForm({ inputText, itemList, updateItemList, setInputText }) {
   const onChangeHandler = (e) => {
-    setItemName(e.target.value);
+    setInputText(e.target.value);
   };
   const addItemsList = () => {
-    updateItemList([...itemList, { item: itemName, key: Date.now() }]);
-    setItemName("");
+    updateItemList([...itemList, { item: inputText, key: Date.now() }]);
+    setInputText("");
   };
   console.log(onChangeHandler);
   return (
     <div className="App">
       <div className="todo-header">
-        <img src={rect} alt="" className="img_rect" />
+        <img
+          src={rect1}
+          style={{
+            width: "430px",
+            height: "202px",
+            borderRadius: "10px 10px 0px 0px",
+          }}
+          alt=""
+          className="img_rect"
+        />
         <div className="thur">
           <p className="thru_text">Thur 9</p>
           <h1 className="am">6:23 AM</h1>
@@ -28,14 +34,14 @@ function Todo() {
           type="text"
           className="input_frame"
           placeholder="Note"
-          value={itemName}
+          value={inputText}
           onChange={onChangeHandler}
         />
         <button onClick={addItemsList}>+</button>
       </div>
-      <List itemList={itemList} updateItemList={updateItemList} />
+      <TodoList itemList={itemList} updateItemList={updateItemList} />
     </div>
   );
 }
 
-export default Todo;
+export default TodoForm;
