@@ -35,7 +35,7 @@ function TodoForm({
           <h1 className="am">6:23 AM</h1>
         </div>
       </div>
-      <div className="input-wrapper">
+      <div className="text-addTodo">
         <input
           type="text"
           className="input_frame"
@@ -43,7 +43,9 @@ function TodoForm({
           value={inputText}
           onChange={onChangeHandler}
         />
-        <button onClick={addItemsList}>+</button>
+        <button className="btn-addTodo" onClick={addItemsList}>
+          <div className="plus">+</div>
+        </button>
       </div>
       <TodoList itemList={itemList} updateItemList={updateItemList} />
     </div>
