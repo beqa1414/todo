@@ -4,16 +4,16 @@ import delete_icon from "../images/Vector.png";
 function TodoItem({ itemObj, deleteItemList }) {
   return (
     <>
-      <div key={itemObj.key} className="item">
+      <div key={itemObj.id} className="item">
         {" "}
-        <p className="text" style={{ color: "green" }}>
+        {/* <p className="text" style={{ color: "green" }}>
           {itemObj.item}
-        </p>
-        <h3>{itemObj.title}</h3>
-        <p>{itemObj.day}</p>
+        </p> */}
+        <h3 className="card-title">{itemObj.title}</h3>
+        <p className="card-text">{itemObj.day}</p>
         <div className="icon">
           <img
-            onClick={() => deleteItemList(itemObj.key)}
+            onClick={() => deleteItemList(itemObj.id)}
             src={delete_icon}
             style={{
               width: "20px",

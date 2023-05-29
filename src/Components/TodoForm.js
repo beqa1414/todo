@@ -2,18 +2,24 @@ import rect from "../images/Rectangle 2.png";
 import TodoList from "./TodoList";
 import rect1 from "../images/Rectangle1.jpg";
 
-function TodoForm({ inputText, itemList, updateItemList, setInputText }) {
-  const onChangeHandler = (e) => {
-    setInputText(e.target.value);
-  };
+function TodoForm({
+  inputText,
+  itemList,
+  updateItemList,
+  setInputText,
+  onChangeHandler,
+}) {
+  // const onChangeHandler = (e) => {
+  //   setInputText(e.target.value);
+  // };
   const addItemsList = () => {
     updateItemList([...itemList, { item: inputText, key: Date.now() }]);
     setInputText("");
   };
   console.log(onChangeHandler);
   return (
-    <div className="App">
-      <div className="todo-header">
+    <div className="card">
+      <div className="img-header">
         <img
           src={rect1}
           style={{

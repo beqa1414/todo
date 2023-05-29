@@ -2,8 +2,8 @@
 import TodoItem from "./TodoItem";
 
 function TodoList({ itemList, updateItemList }) {
-  const deleteItemList = (key) => {
-    const newList = itemList.filter((itemObj) => itemObj.key !== key);
+  const deleteItemList = (id) => {
+    const newList = itemList.filter((itemObj) => itemObj.id !== id);
     updateItemList(newList);
   };
 
